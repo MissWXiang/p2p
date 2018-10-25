@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 个人中心中的还款明细</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!-- 头部导航 -->
+    <nav class="userInfo-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="idusername"></a>
+                    </li>
+                    <li>
+                        <a href="#">账户充值</a>
+                    </li>
+                    <li>
+                        <a href="/cancel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="userInfo-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">我要投资</a>
+                    </li>
+                    <li>
+                        <a href="#">我要借款</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="#">新手指引</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="borrow_list-main container">
+        <div class="row offcanvas">
+            <!-- 左侧内容 -->
+            <div class="col-sm-3 offcanvas-aside">
+                <div class="panel panel-group panel-default" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a href="">投资项目</a>
+                        </h4>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./login_list.html">借款项目</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./bid_request_list.html"> 借款项目</a>
+                        </div>
+                        <div class="panel-body active">
+                            <a href="./borrow_list.html"> 还款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">我的账户</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body active1">
+                            <a href="">账户信息</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./realAuth.html">实名认证</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">银行卡管理</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">登录记录</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">资产详情</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./accountflow_list.html">账户流水</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./recharge_list.html">充值明细</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./money_withdraw_list.html">提现记录</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">收款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./borrow_info.html">个人资料</a>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="col-sm-9 offcanvas-right">
+                <!-- 按钮 -->
+                <button class="btn btn-primary offcanvas-btn hidden-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+                <div class="panel panel-default" style="height:700px;">
+                    <div class="panel-heading">借款项目</div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>标题</th>
+                                    <th>时间</th>
+                                    <th>借款金额(元)</th>
+                                    <th>期限</th>
+                                    <th>利率</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>江湖救急
+                                        <label class="label label-primary">信</label>
+                                    </td>
+                                    <td>2016-01-02</td>
+                                    <td>2000</td>
+                                    <td>12月</td>
+                                    <td>12%</td>
+                                    <td>待发布 招标中 满标未审核 还款中 招标拒绝</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- 自定义js -->
+    <script>
+
+        $(function () {
+
+            //滑动效果
+            //pc端滑动效果
+            (function () {
+                //定义开关
+                let flag = false;
+                //点击滑动效果
+                $('.offcanvas-btn').on('click', function () {
+                    if (!flag) {
+                        $('.offcanvas').addClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>');
+                        flag = true;
+                    } else {
+                        $('.offcanvas').removeClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>');
+                        flag = false;
+                    }
+                })
+
+            })();
+
+            //移动端效果
+            //定义开始值 和 结束值  和 最小值
+            let startX,
+                endX,
+                minX = 30;
+            //开始值
+            $(document).on('touchstart', function (e) {
+                // console.log('开始值',e.originalEvent.changedTouches[0].pageX);
+                startX = e.originalEvent.changedTouches[0].pageX;
+            })
+            //结束值
+            $(document).on('touchend', function (e) {
+                // console.log('结束值',e.originalEvent.changedTouches[0].pageX);
+                endX = e.originalEvent.changedTouches[0].pageX;
+                if ((endX - startX) > minX) {
+                    $('.offcanvas').addClass('active');
+                    $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>')
+                } else if ((startX - endX) > minX) {
+                    $('.offcanvas').removeClass('active');
+                    $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>')
+                }
+            })
+        });
+
+        $(function () {
+            //加载登录后用户名
+            $('#idusername').html(document.cookie.split('=')[1]);
+        })
+    </script>
+</body>
+
+</html>

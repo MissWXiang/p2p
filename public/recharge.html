@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 账户充值</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入bootstrapvalidator.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body>
+
+    <!-- 头部导航 -->
+    <nav class="login-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="idusername"></a>
+                    </li>
+                    <li>
+                        <a href="#">账户充值</a>
+                    </li>
+                    <li>
+                        <a href="/cancel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="login-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>账户充值</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="recharge-main container">
+        <!-- 账户充值 -->
+        <div class="recharge-account-top">
+            <div class="panel">
+                <h3>账户充值</h3>
+                <p>1. 由于银行系统的限制，充值功能建议使用 IE 内核（IE8及以上）的浏览器。</p>
+                <p>2. 请注意：为打击信用卡套现行为，充值资金必须经过投资回款后方能允许提现。</p>
+            </div>
+        </div>
+        <!-- 充值滑动 -->
+        <div class="recharge-sliding">
+            <div>
+                <!-- 导航条 -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation">
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">线上充值(第三方平台)</a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">线下充值</a>
+                    </li>
+
+                </ul>
+
+                <!-- 导航内容 -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="home">系统暂不支持，请采用线下充值</div>
+                    <div role="tabpanel" class="tab-pane active" id="profile">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>银行名称</th>
+                                    <th>开户人姓名</th>
+                                    <th>银行帐号</th>
+                                    <th>开户行支行名称</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="item01"></span>
+                                    </td>
+                                    <td>源代码</td>
+                                    <td>62170038233428412750</td>
+                                    <td>府城大道支行</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="item02"></span>
+                                    </td>
+                                    <td>源代码</td>
+                                    <td>62170038233428412750</td>
+                                    <td>成都天府新谷支行</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="item03"></span>
+                                    </td>
+                                    <td>源代码</td>
+                                    <td>62170038233428412750</td>
+                                    <td>成都高新天府大道支行</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 文本内容 -->
+                        <div class="recharge-text">
+                            <h4 class="text-primary">第一步:</h4>
+                            <p class="text-primary">请选择往以上一个账号汇款或转账您所要充值的金额（若您是跨行转账，推荐选择建行）。注：请保存您的交易记录信息。</p>
+                            <h4 class="text-primary">第二步:</h4>
+                            <p class="text-primary">款或转账成功后，再选择你所汇款或转账的账号，并填写以下完整的信息后，提交您的线下充值申请。我们将会在下个工作日核对您的申请。</p>
+                        </div>
+                        <!-- 表单提交 -->
+                        <div class="recharge-form">
+                            <form class="form-horizontal" id="rechargeForm">
+                                <div class="form-group">
+                                    <label for="bank" class="col-sm-2 control-label">银行</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" id="bank">
+                                            <option value="1">工商银行62170038233428412750(府城大道支行)</option>
+                                            <option value="2">农业银行6217003834411112750(成都天府新谷支行)</option>
+                                            <option value="3">招商银行6212303810028412750(成都高新天府大道支行)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="transaction" class="col-sm-2 control-label">交易号</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" class="form-control" id="transaction" name="transaction" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tradinghour" class="col-sm-2 control-label">交易时间</label>
+                                    <div class="col-sm-3">
+                                        <input type="date" class="form-control" id="tradinghour" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rechargeamount" class="col-sm-2 control-label">充值金额</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="rechargeamount" name="rechargeamount" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="instructions" class="col-sm-2 control-label">说明</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" rows="3" id="instructions" name="instructions"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">确认提交</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrapvalidator.min.js -->
+    <script src="./lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 自定义js代码 -->
+    <script>
+        // 表单验证
+        $('#rechargeForm').bootstrapValidator({
+            // 反馈图标
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',   // √
+                invalid: 'glyphicon glyphicon-remove',  // ×
+                validating: 'glyphicon glyphicon-refresh'  // 刷新
+            },
+            // 字段（需要验证的字段）
+            fields: {
+                // 交易号
+                transaction: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '交易号不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 8,
+                            max: 12,
+                            message: '交易号只能为8~12位数字'
+                        }
+                    }
+                },
+                // 交易金额
+                rechargeamount: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '交易金额不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 4,
+                            message: '交易金额最少为4位'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+$/,
+                            message: '交易金额只能是数字'
+                        }
+                    }
+                },
+                // 说明
+                instructions: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '说明不能为空'
+                        }
+                    }
+                }
+            },
+            // 提交验证
+
+        }).on('success.form.bv', function (e) {
+            // 阻止浏览器默认行为
+            e.preventDefault();
+            // 获取用户名和密码
+            //let username = $('#username').val()
+            //let password = $('#pwd').val()
+            //console.log(username, password)
+            // 构造请求 发送ajax
+            // $.get('./server/data.json', { "username": username, "password": password }, function (data) {
+            //     if (data.errcode) {
+            //         alert(data.message);
+            //         setTimeout(() => {
+            //             location.href = './index.html';
+            //         }, 1000)
+
+            //     } else {
+            //         alert(data.message);
+            //     }
+            // })
+        });
+
+        $(function () {
+            $("#idusername").html(document.cookie.split('=')[1])
+        })
+    </script>
+</body>
+
+</html>

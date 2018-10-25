@@ -1,0 +1,114 @@
+/*主体内容*/
+.personal-main{
+    margin-bottom: 40px;
+    //左侧
+    .col-sm-3{
+        .panel-heading{
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            h4{
+                color: @baseColor;
+                font-size: 14px;
+                &:hover{
+                    color: #333;
+                }
+            }
+        }
+        .active{
+            background: #337ab7;
+            h4{
+                color: #fff;
+                &:hover{
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .active1{
+            background: #337ab7;
+            a{
+                color: #fff;
+            }
+        }
+        #collapseThree{
+            .panel-body{
+                a{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+    //右侧
+    .col-sm-9{
+       //右上内容
+       .panel{
+            padding: 20px;
+            //图片和文本
+            .personal-img-text{
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 20px;
+               .personal-img{
+                   border: 1px solid #ccc;
+                   padding: 10px;
+                   img{
+                       width: 80px;
+                   }
+               }
+               .personal-text{
+                   margin-left: 20px;
+                   margin-top: 10px;
+               }
+           }
+           //金额文本
+           .personal-amount{
+               margin-top: 20px;
+               font-size: 18px;
+               margin-left: 20px;
+               span{
+                   color: #337ab7;
+               }
+           }
+           //账户充值和账户提现
+           .personal-recharge{
+               margin-top: 40px;
+           }
+           //实名认证
+           .personal-attestation{
+               margin-top: 40px;
+                .personal-attestation-text{
+                    margin-left: 10px;
+                }
+           }
+       }
+    }
+}
+
+/* 小屏幕样式 */
+@media screen and (max-width:768px){
+    //父容器
+    .offcanvas{
+        height: 100%;
+        position: relative;
+        left: 0;
+        //过度效果
+        transition: all 1s;
+        .offcanvas-aside{
+            position: absolute;
+            width: 50%;
+            left: -50%;
+        }
+        .offcanvas-right{
+            //按钮
+            .offcanvas-btn{
+                position: absolute;
+                top: 30%;
+                padding: 10px 4px;
+                z-index: 999;
+            }
+        }
+    }
+    .active{
+        left: 50%;
+    }
+
+} 

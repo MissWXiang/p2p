@@ -1,0 +1,84 @@
+/*登录头部导航*/
+.userInfo-header-nav{
+    border-radius: 0;
+    margin-bottom: 0;
+    //左侧导航
+    .navbar-header{
+        a{
+            color: #fff;
+            i{
+                font-size: 26px;
+            }
+        }
+    }
+    //右侧导航
+    .navbar-right{
+        li{
+            a{
+                color: #fff;
+                &:hover{
+                    color: @baseColor;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/*内容导航*/
+.userInfo-content-nav{
+    margin-bottom: 10px;
+    //中间内容
+    .navbar-nav{
+        li{
+            min-width: 90px;
+            text-align: center;
+            font-size: 16px;
+            &:hover{
+                background: #f1f1f1;
+                a{
+                    color: @baseColor;
+                }
+            }
+            a{
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+
+/*主体内容*/
+.userInfo-main{
+    margin-bottom: 40px;
+    .col-sm-3{
+        .panel-heading{
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            h4{
+                color: @baseColor;
+                font-size: 14px;
+                &:hover{
+                    color: #333;
+                }
+            }
+        }
+        .active{
+            background: #337ab7;
+            h4{
+                color: #fff;
+                &:hover{
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+        }
+        #collapseThree{
+            .panel-body{
+                a{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}

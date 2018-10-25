@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 个人中心 实名认证</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入bootstrapvalidator.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!-- 头部导航 -->
+    <nav class="userInfo-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="idusername"></a>
+                    </li>
+                    <li>
+                        <a href="#">账户充值</a>
+                    </li>
+                    <li>
+                        <a href="/cancel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="userInfo-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./invest.html">我要投资</a>
+                    </li>
+                    <li>
+                        <a href="./borrow.html">我要借款</a>
+                    </li>
+                    <li class="active">
+                        <a href="./personal.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="#">新手指引</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="realAuth-main container">
+        <div class="row offcanvas">
+            <!-- 左侧内容 -->
+            <div class="col-sm-3 offcanvas-aside">
+                <div class="panel panel-group panel-default" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a href="">投资项目</a>
+                        </h4>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./login_list.html">借款项目</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./bid_request_list.html"> 借款项目</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./borrow_list.html"> 还款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">我的账户</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="">账户信息</a>
+                        </div>
+                        <div class="panel-body active1">
+                            <a href="./realAuth.html">实名认证</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">银行卡管理</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">登录记录</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">资产详情</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./accountflow_list.html">账户流水</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./recharge_list.html">充值明细</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./money_withdraw_list.html">提现记录</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">收款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./borrow_info.html">个人资料</a>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div class="col-sm-9 offcanvas-right">
+                <!-- 按钮 -->
+                <button class="btn btn-primary offcanvas-btn hidden-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+                <div class="realAuth-attestation">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">实名认证</div>
+                        <div class="panel-body">
+                            <p class="text-danger text-center">为保护您账户安全，实名认证成功之后不能修改信息，请认真填写！</p>
+                            <form class="form-horizontal col-md-offset-3" id="realAuthForm">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">用户名</label>
+                                    <div class="col-sm-4" style="margin-top:8px;">
+                                        小强
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">姓名</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="username" name="username" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sex" class="col-sm-2 control-label">性别</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control">
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sex" class="col-sm-2 control-label">证件类型</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control">
+                                            <option>身份证</option>
+                                            <option>驾驶证</option>
+                                            <option>军官证</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certid" class="col-sm-2 control-label">证件号码</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="certid" name="certid" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="birthdate" class="col-sm-2 control-label">出生日期</label>
+                                    <div class="col-sm-4">
+                                        <input type="date" class="form-control" id="birthdate" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certaddress" class="col-sm-2 control-label">证件地址</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="certaddress" name="certaddress" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certaddress" class="col-sm-2 control-label">身份证照片</label>
+                                    <div class="col-sm-10">
+                                        <p class="text-primary">请点击“选择图片”,选择证件的正反两面照片。</p>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <a href="">上传正面</a>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <a href="">上传反面</a>
+                                            </div>
+                                            <div class="col-sm-4 template">
+                                                <a href="">查看样板</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">提交认证</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrapvalidator.min.js -->
+    <script src="./lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 自定义js代码 -->
+    <script>
+        // 表单验证
+        $('#realAuthForm').bootstrapValidator({
+            // 反馈图标
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',   // √
+                invalid: 'glyphicon glyphicon-remove',  // ×
+                validating: 'glyphicon glyphicon-refresh'  // 刷新
+            },
+            // 字段（需要验证的字段）
+            fields: {
+                // 姓名
+                username: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '姓名不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 4,
+                            max: 16,
+                            message: '姓名为4~16位字母，数字，符号或中文'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_]+$/,
+                            message: '用户名只能包含大写、小写、数字和下划线'
+                        }
+                    }
+                },
+                // 证件号码
+                certid: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '证件号码不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 6,
+                            max: 18,
+                            message: '证件号码长度必须在6到18位之间'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+$/,
+                            message: '证件号码只能是数字'
+                        }
+                    }
+                },
+                // 证件地址
+                certaddress: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '证件地址不能为空'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^[\u4e00-\u9fa5]+$/,
+                            message: '证件地址填只能是汉字'
+                        }
+                    }
+                }
+            },
+            // 提交验证
+
+        }).on('success.form.bv', function (e) {
+            // 阻止浏览器默认行为
+            e.preventDefault();
+            // 获取用户名和密码
+            //let username = $('#username').val()
+            //let password = $('#pwd').val()
+            //console.log(username, password)
+            // 构造请求 发送ajax
+            // $.get('./server/data.json', { "username": username, "password": password }, function (data) {
+            //     if (data.errcode) {
+            //         alert(data.message);
+            //         setTimeout(() => {
+            //             location.href = './index.html';
+            //         }, 1000)
+
+            //     } else {
+            //         alert(data.message);
+            //     }
+            // })
+        });
+
+        $(function () {
+
+            //滑动效果
+            //pc端滑动效果
+            (function () {
+                //定义开关
+                let flag = false;
+                //点击滑动效果
+                $('.offcanvas-btn').on('click', function () {
+                    if (!flag) {
+                        $('.offcanvas').addClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>');
+                        flag = true;
+                    } else {
+                        $('.offcanvas').removeClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>');
+                        flag = false;
+                    }
+                })
+
+            })();
+
+            //移动端效果
+            //定义开始值 和 结束值  和 最小值
+            let startX,
+                endX,
+                minX = 30;
+            //开始值
+            $(document).on('touchstart', function (e) {
+                // console.log('开始值',e.originalEvent.changedTouches[0].pageX);
+                startX = e.originalEvent.changedTouches[0].pageX;
+            })
+            //结束值
+            $(document).on('touchend', function (e) {
+                // console.log('结束值',e.originalEvent.changedTouches[0].pageX);
+                endX = e.originalEvent.changedTouches[0].pageX;
+                if ((endX - startX) > minX) {
+                    $('.offcanvas').addClass('active');
+                    $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>')
+                } else if ((startX - endX) > minX) {
+                    $('.offcanvas').removeClass('active');
+                    $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>')
+                }
+            })
+        });
+
+        $(function () {
+            $("#idusername").html(document.cookie.split('=')[1])
+        })
+    </script>
+</body>
+
+</html>

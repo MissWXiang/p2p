@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 个人中心</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!-- 头部导航 -->
+    <nav class="userInfo-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="idusername"></a>
+                    </li>
+                    <li>
+                        <a href="./realname.html">实名认证</a>
+                    </li>
+                    <li>
+                        <a href="#">账户充值</a>
+                    </li>
+                    <li>
+                        <a href="/cancel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="userInfo-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./invest.html">我要投资</a>
+                    </li>
+                    <li>
+                        <a href="./borrow.html">我要借款</a>
+                    </li>
+                    <li class="active">
+                        <a href="./personal.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="#">新手指引</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="personal-main container">
+        <div class="row offcanvas">
+            <!-- 左侧内容 -->
+            <div class="col-sm-3 offcanvas-aside">
+                <div class="panel panel-group panel-default" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a href="">投资项目</a>
+                        </h4>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./login_list.html">借款项目</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./bid_request_list.html"> 借款项目</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./borrow_list.html"> 还款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">我的账户</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body active1">
+                            <a href="">账户信息</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./realAuth.html">实名认证</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">银行卡管理</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">登录记录</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">资产详情</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./accountflow_list.html">账户流水</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./recharge_list.html">充值明细</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./money_withdraw_list.html">提现记录</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">收款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./borrow_info.html">个人资料</a>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div class="col-sm-9 offcanvas-right">
+                <!-- 按钮 -->
+                <button class="btn btn-primary offcanvas-btn hidden-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+                <!-- table 滑动 -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">基本信息</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">收益详情</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#editpassword" aria-controls="profile" role="tab" data-toggle="tab">密码修改</a>
+                    </li>
+                </ul>
+
+                <!-- table 内容 -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <!-- 右上内容  图片 -->
+                        <div class="panel panel-default " style="border-top:0; border-radius:0 0 6px 6px;">
+                            <!-- 图片和文本 -->
+                            <div class="personal-img-text clearfix">
+                                <div class="personal-img pull-left">
+                                    <img src="./dist/images/head_icon.jpg" alt="">
+                                </div>
+                                <div class="personal-text pull-left">
+                                    <p>昵 称：源代码教育</p>
+                                    <p>用户名：<a href="#" id="idusername1"></a></p>
+                                    <p>最后登录时间：2016-10-25 15:30:10</p>
+                                </div>
+                            </div>
+                            <!-- 金额文本 -->
+                            <div class="personal-amount">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        总金额：
+                                        <span>10000元</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        可用金额：
+                                        <span>8000元</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        冻结金额：
+                                        <span>2000元</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 账户充值和账户提现 -->
+                            <div class="personal-recharge text-center">
+                                <button class="btn btn-lg btn-primary">账户充值</button>
+                                <button class="btn btn-lg btn-danger">账户提现</button>
+                            </div>
+                            <!-- 实名认证 -->
+                            <div class="personal-attestation">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="personal-attestation-img-text clearfix">
+                                            <div class="person-attestation-img pull-left">
+                                                <img src="./dist/images/shiming.png" alt="">
+                                            </div>
+                                            <div class="personal-attestation-text pull-left">
+                                                <p>实名认证</p>
+                                                <p>未认证
+                                                    <a href="">马上认证</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>实名认证之后才能在平台投资</p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="personal-attestation-img-text clearfix">
+                                            <div class="person-attestation-img pull-left">
+                                                <img src="./dist/images/shouji.jpg" alt="">
+                                            </div>
+                                            <div class="personal-attestation-text pull-left">
+                                                <p>手机认证</p>
+                                                <p>已认证
+                                                    <a href="">查看</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>可以收到系统操作信息,并增加使用安全性</p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="personal-attestation-img-text clearfix">
+                                            <div class="person-attestation-img pull-left">
+                                                <img src="./dist/images/youxiang.jpg" alt="">
+                                            </div>
+                                            <div class="personal-attestation-text pull-left">
+                                                <p>邮箱认证</p>
+                                                <p>已认证
+                                                    <a href="">查看</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>您可以设置邮箱来接收重要信息</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="personal-attestation-img-text clearfix">
+                                            <div class="person-attestation-img pull-left">
+                                                <img src="./dist/images/baozhan.jpg" alt="">
+                                            </div>
+                                            <div class="personal-attestation-text pull-left">
+                                                <p>VIP会员</p>
+                                                <p>普通用户
+                                                    <a href="">查看</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p>VIP会员，让你更快捷的投资</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <!-- 收益详情报表 -->
+                        <div id="main" style="height: 400px;"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="editpassword">
+                        <!-- 密码修改表单 -->
+                        <form class="form-horizontal" id="editpwd" style="margin-top:200px;margin-left:200px;">
+                            <div class="form-group">
+                              <label for="oldpwd" class="col-sm-2 control-label">原密码</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="oldpwd" name="oldpwd" />
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="newpwd" class="col-sm-2 control-label">修改密码</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="newpwd" name="newpwd" />
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-primary" id="editconfirm">确认修改</button>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--1. echarts-all.js -->
+    <script src="./lib/echarts-all.js"></script>
+    <!-- js自定义代码 -->
+    <script>
+        //加载用户信息
+        $(function(){
+            //加载登录后用户名
+            $('#idusername').html(document.cookie.split('=')[1]);
+            $('#idusername1').html(document.cookie.split('=')[1]);
+        });
+
+        $(function () {
+
+            //pc端滑动效果
+            (function () {
+                //定义开关
+                let flag = false;
+                //pc端滑动效果
+                $('.offcanvas-btn').on('click', function () {
+                    if (!flag) {
+                        $('.offcanvas').addClass('active');
+                        $(this).html('<span class="glyphicon glyphicon-chevron-left"></span>')
+                        flag = true;
+                    } else {
+                        $('.offcanvas').removeClass('active');
+                        $(this).html('<span class="glyphicon glyphicon-chevron-right"></span>')
+                        flag = false;
+                    }
+                })
+            })();
+
+            //移动端滑动效果
+            (function () {
+                //定义开始和结束还有最小距离
+                let startX,
+                    endX,
+                    minX = 40;
+                //开始触摸
+                $(document).on('touchstart', function (e) {
+                    //console.log('开始触摸',e.originalEvent.changedTouches[0].pageX);
+                    startX = e.originalEvent.changedTouches[0].pageX;
+                })
+                //触摸结束
+                $(document).on('touchend', function (e) {
+                    //console.log('触摸结束',e.originalEvent.changedTouches[0].pageX);
+                    endX = e.originalEvent.changedTouches[0].pageX;
+                    if ((endX - startX) > minX) {
+                        $('.offcanvas').addClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>')
+                    } else if ((startX - endX) > minX) {
+                        $('.offcanvas').removeClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>')
+                    }
+                })
+            })();
+
+        });
+    </script>
+
+    <!-- 数据可视化报表 -->
+    <script>
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            let id = e.target.hash.substring(1);
+            // 这个条件里面渲染报表
+            if (id === 'profile') {
+                // a) 初始化dom容器
+                let mycharts = echarts.init(document.querySelector('#main'));
+
+                // b) 编写配置
+                let option = {
+                    title: {
+                        text: '收益详情',
+                        subtext: '绝对真实',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    // 图例
+                    legend: {
+                        orient: 'vertical',
+                        x: 'left',
+                        data: ['利息', '奖金', '红包', '违约金', '滞纳金']
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: { show: true, readOnly: false },
+                            magicType: {
+                                show: true,
+                                type: ['pie', 'funnel'],
+                                option: {
+                                    funnel: {
+                                        x: '25%',
+                                        width: '50%',
+                                        funnelAlign: 'left',
+                                        max: 1548
+                                    }
+                                }
+                            },
+                            restore: { show: true },
+                            saveAsImage: { show: true }
+                        }
+                    },
+                    calculable: true,
+                    series: [
+                        {
+                            name: '收益详情',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '60%'],
+                            data: [
+                                { value: 335, name: '利息' },
+                                { value: 310, name: '奖金' },
+                                { value: 234, name: '红包' },
+                                { value: 135, name: '违约金' },
+                                { value: 1548, name: '滞纳金' }
+                            ]
+                        }
+                    ]
+                };
+
+                // c）使用配置生成报表
+                mycharts.setOption(option);
+            }
+        })
+    </script>
+
+    <!-- 修改密码的代码 -->
+    <script>
+    $('#editconfirm').on('click',function(){
+        //获取表单数据 和登录用户
+        let oldpwd = $('#oldpwd').val();
+        let newpwd = $('#newpwd').val();
+        let userlogin = document.cookie.split('=')[1];
+        //发起请求
+        $.ajax({
+            url:"/editpwd.html",
+            type:'post',
+            data:{'oldpwd':oldpwd,'newpwd':newpwd,'userlogin':userlogin},
+            dataType:'json',
+            success:(data)=>{
+                // console.log(data);
+                if(data.errcode == '2'){
+                    alert(data.msg);
+                    location.href = './login.html';
+                }else{
+                    alert(data.msg);
+                }
+            }
+        })
+
+    });
+    
+    </script>
+</body>
+
+</html>

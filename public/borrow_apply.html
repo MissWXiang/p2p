@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 信用借款</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入bootstrapvalidator.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!-- 头部导航 -->
+    <nav class="userInfo-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="idusername">xiaoq</a>
+                    </li>
+                    <li>
+                        <a href="#">账户充值</a>
+                    </li>
+                    <li>
+                        <a href="/cannel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="userInfo-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">我要投资</a>
+                    </li>
+                    <li>
+                        <a href="#">我要借款</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="#">新手指引</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="borrow_apply-main container">
+        <div class="row offcanvas">
+            <!-- 左侧内容 -->
+            <div class="col-sm-3 offcanvas-aside">
+                <div class="panel panel-group panel-default" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a href="">投资项目</a>
+                        </h4>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./login_list.html">借款项目</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./bid_request_list.html"> 借款项目</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./borrow_list.html"> 还款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">我的账户</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body active1">
+                            <a href="">账户信息</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./realAuth.html">实名认证</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">银行卡管理</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">登录记录</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="">资产详情</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <a href="./accountflow_list.html">账户流水</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./recharge_list.html">充值明细</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="./money_withdraw_list.html">提现记录</a>
+                        </div>
+                        <div class="panel-body">
+                            <a href="">收款明细</a>
+                        </div>
+                    </div>
+
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a href="./borrow_info.html">个人资料</a>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="col-sm-9 offcanvas-right">
+                <!-- 按钮 -->
+                <button class="btn btn-primary offcanvas-btn hidden-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+                <!-- 右上 -->
+                <div class="panel panel-success">
+                    <div class="content">
+                        <h3>信用借款</h3>
+                        <p>
+                            <span>授信额度：2000</span>
+                            <i>可借金额：2000</i>
+                        </p>
+                    </div>
+                </div>
+                <!-- 右下 -->
+                <div class="panel">
+                    <div class="panel-heading">
+                        借款信息
+                        <label class="label label-primary">信用标</label>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="borrowApplyForm">
+                            <div class="form-group">
+                                <label for="borrowAmount" class="col-sm-2  col-sm-offset-1">借款金额</label>
+                                <div class="col-sm-3 borrow-left">
+                                    <input type="text" class="form-control" id="borrowAmount" name="borrowAmount">
+                                    <div class="input-group-addon panel-group-addon">元</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="borrowInterest" class="col-sm-2 control-label col-sm-offset-1">借款利息</label>
+                                <div class="col-sm-3 borrow-left">
+                                    <input type="text" class="form-control" id="borrowInterest" name="borrowInterest">
+                                    <div class="input-group-addon panel-group-addon">%</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="borrowIimit" class="col-sm-2 control-label col-sm-offset-1">借款期限</label>
+                                <div class="input-group col-sm-3">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>3</option>
+                                        <option>6</option>
+                                        <option>9</option>
+                                        <option>12</option>
+                                        <option>24</option>
+                                    </select>
+                                    <div class="input-group-addon">月</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="borrowWay" class="col-sm-2 control-label col-sm-offset-1">还款方式</label>
+                                <div class="input-group col-sm-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" checked name="inlineRadioOptions" id="inlineRadio1" value="option1">按月分期
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">按月到期
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="minTender" class="col-sm-2 control-label col-sm-offset-1">最小投标</label>
+                                <div class="col-sm-3 borrow-left ">
+                                    <input type="text" class="form-control" id="minTender" name="minTender">
+                                    <div class="input-group-addon panel-group-addon">元</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tenderBonus" class="col-sm-2 control-label col-sm-offset-1">投标奖金</label>
+                                <div class="col-sm-3 borrow-left">
+                                    <input type="text" class="form-control" id="tenderBonus" name="tenderBonus">
+                                    <div class="input-group-addon panel-group-addon">元</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tenderNumber" class="col-sm-2 control-label col-sm-offset-1">招标天数</label>
+                                <div class="input-group col-sm-3">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                    <div class="input-group-addon">天</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="borrowTitle" class="col-sm-2 control-label col-sm-offset-1">借款标题</label>
+                                <div class="col-sm-6 borrow-left">
+                                    <input type="text" class="form-control" id="borrowTitle" name="borrowTitle" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="borrowDescribe" class="col-sm-2 control-label col-sm-offset-1">借款描述</label>
+                                <div class="col-sm-6 borrow-left">
+                                    <textarea class="form-control" rows="4" name="borrowDescribe"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-primary btnApply">提交申请</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- 相关费用 -->
+                        <div class="borrow-related-fees hidden-xs">
+                            <h3>相关费用</h3>
+                            <p>利息 --</p>
+                            <p>奖金 --</p>
+                            <p>管理费 --</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- bootstrapvalidator.min.js -->
+    <script src="./lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 自定义js代码 -->
+    <script>
+        // 表单验证
+        $('#borrowApplyForm').bootstrapValidator({
+            // 反馈图标
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',   // √
+                invalid: 'glyphicon glyphicon-remove',  // ×
+                validating: 'glyphicon glyphicon-refresh'  // 刷新
+            },
+            // 字段（需要验证的字段）
+            fields: {
+                // 借款金额
+                borrowAmount: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '借款金额不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 4,
+                            message: '借款金额最少为4位数'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+$/,
+                            message: '手机号不符合规范'
+                        }
+                    }
+                },
+                // 借款利息
+                borrowInterest: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '借款利息不能为空'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+%$/,
+                            message: '借款利息不符合规范'
+                        }
+                    }
+                },
+                // 最小投标
+                minTender: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '最小投标不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 4,
+                            message: '最小投标最少为4位数'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+$/,
+                            message: '最小投标不符合规范'
+                        }
+                    }
+                },
+                //投标奖金
+                tenderBonus: {
+                    // 验证器（里面是验证的项目规则）
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '投标奖金不能为空'
+                        },
+                        // 长度验证
+                        stringLength: {
+                            min: 8,
+                            message: '投标奖金最少为8位数'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^\d+$/,
+                            message: '投标奖金不符合规范'
+                        }
+                    }
+                },
+                //借款标题
+                borrowTitle: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '借款标题不能为空'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^[\u4e00-\u9fa5]+$/,
+                            message: '借款标题只能是汉字'
+                        }
+                    }
+                },
+                //借款描述
+                borrowDescribe: {
+                    // 验证器
+                    validators: {
+                        // 非空验证
+                        notEmpty: {
+                            message: '借款描述不能为空'
+                        },
+                        // 正则验证
+                        regexp: {
+                            regexp: /^[\u4e00-\u9fa5]+$/,
+                            message: '借款描述只能是汉字'
+                        }
+                    }
+                }
+            },
+
+            // 提交验证
+        }).on('success.form.bv', function (e) {
+            // 阻止浏览器默认行为
+            e.preventDefault();
+            // 获取用户名和密码
+            //let username = $('#username').val()
+            //let password = $('#pwd').val()
+            //console.log(username, password)
+            // 构造请求 发送ajax
+            // $.get('./server/data.json', { "username": username, "password": password }, function (data) {
+            //     if (data.errcode) {
+            //         alert(data.message);
+            //         setTimeout(() => {
+            //             location.href = './index.html';
+            //         }, 1000)
+
+            //     } else {
+            //         alert(data.message);
+            //     }
+            // })
+        });
+
+        //滑动效果
+        $(function () {
+
+            //pc端滑动效果
+            (function () {
+                //定义开关
+                let flag = false;
+                //点击滑动效果
+                $('.offcanvas-btn').on('click', function () {
+                    if (!flag) {
+                        $('.offcanvas').addClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>');
+                        flag = true;
+                    } else {
+                        $('.offcanvas').removeClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>');
+                        flag = false;
+                    }
+                })
+
+            })();
+
+            //移动端效果
+            (function () {
+                //定义开始值 和 结束值  和 最小值
+                let startX,
+                    endX,
+                    minX = 30;
+                //开始值
+                $(document).on('touchstart', function (e) {
+                    // console.log('开始值',e.originalEvent.changedTouches[0].pageX);
+                    startX = e.originalEvent.changedTouches[0].pageX;
+                })
+                //结束值
+                $(document).on('touchend', function (e) {
+                    // console.log('结束值',e.originalEvent.changedTouches[0].pageX);
+                    endX = e.originalEvent.changedTouches[0].pageX;
+                    if ((endX - startX) > minX) {
+                        $('.offcanvas').addClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-left"></span>')
+                    } else if ((startX - endX) > minX) {
+                        $('.offcanvas').removeClass('active');
+                        $('.offcanvas-btn').html('<span class="glyphicon glyphicon-chevron-right"></span>')
+                    }
+                })
+            })();
+
+            //清除表单验证的样式
+            $('.btnApply').on('click', function () {
+                //清除后面的字体
+                $('.panel-group-addon').each((v, i) => {
+                    i.innerHTML = '';
+                })
+            })
+        });
+
+        $(function () {
+            //加载登录后用户名
+            $('#idusername').html(document.cookie.split('=')[1]);
+        })
+
+    </script>
+</body>
+
+</html>

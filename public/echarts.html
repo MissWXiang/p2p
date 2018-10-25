@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业 数据报表</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入echarts.js -->
+    <script src="./lib/echarts-all.js"></script>
+</head>
+
+<body>
+    <div class="clearfix">
+        <!-- 柱状图和折线图 -->
+        <div class="panel panel-default pull-left" style="width:800px;margin-left:20px; margin-top:20px;">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-signal"></span> 直方图</div>
+            <div class="panel-body">
+                <!-- 准备容器 -->
+                <div id="main" style="height:400px;"></div>
+            </div>
+        </div>
+
+        <!-- 饼状图 -->
+        <div class="panel panel-default pull-right" style="width:500px;margin-top:20px;margin-right:20px;">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-bell"></span> 饼状图</div>
+            <div class="panel-body">
+                <!-- 准备容器 -->
+                <div id="main1" style="height:400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 雷达图 -->
+    <div class="panel panel-default" style="width:500px; margin:20px auto;">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-bell"></span> 雷达图</div>
+        <div class="panel-body">
+            <!-- 准备容器 -->
+            <div id="main2" style="height:400px;"></div>
+        </div>
+    </div>
+    <script>
+        //初始化dom
+        let myecharts = echarts.init(document.querySelector('#main'));
+        let myecharts1 = echarts.init(document.querySelector('#main1'));
+        let myecharts2 = echarts.init(document.querySelector('#main2'));
+
+        // b) 饼状图编写配置
+        //折线和柱状图
+        let option = {
+            tooltip: {
+                trigger: 'axis',
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            legend: {
+                data: ['个数', '平均距离']
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['公交站', '写字楼', '学校', '医院', '地铁', '购物']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '个数',
+                    axisLabel: {
+                        formatter: '{value} 个'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '平均距离',
+                    axisLine: {
+                        lineStyle: { color: 'red' },
+                        textStyle: { color: 'red' },
+                    },
+                    axisLabel: {
+                        formatter: '{value} m'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '个数',
+                    type: 'bar',
+                    itemStyle: { normal: { color: '#5793F3' } },
+                    data: [18, 50, 48, 12, 5, 2]
+                },
+                {
+                    name: '平均距离',
+                    type: 'line',
+                    itemStyle: { normal: { color: '#D14A61' } },
+                    yAxisIndex: 1,
+                    data: [600, 560, 630, 500, 750, 630, 1000]
+                }
+            ]
+        }
+
+        let option1 = {
+            title: {
+                text: '收益详情',
+                subtext: '绝对真实',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            // 图例
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data: ['公交站', '地铁', '学校', '医院', '写字楼', '购物']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    magicType: {
+                        show: true,
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            series: [
+                {
+                    name: '收益详情',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: 160, name: '公交站' },
+                        { value: 30, name: '地铁' },
+                        { value: 200, name: '学校' },
+                        { value: 120, name: '医院' },
+                        { value: 220, name: '写字楼' },
+                        { value: 20, name: '购物' }
+                    ]
+                }
+            ]
+        };
+
+        //雷达图配置
+        let option2 = {
+            title: {
+                text: '综合得分',
+                x: 'center',
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: { show: true, readOnly: false },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            polar: [
+                {
+                    indicator: [
+                        { text: '生活', max: 100 },
+                        { text: '交通', max: 100 },
+                        { text: '工作', max: 100 },
+                        { text: '教育', max: 100 },
+                        { text: '医疗', max: 100 }
+                    ]
+                }
+            ],
+            calculable: true,
+            series: [
+                {
+                    name: '收益详情',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [0, 30, 90, 70, 20],
+                            name: '收益详情'
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // c）使用配置生成报表
+        myecharts.setOption(option);
+        myecharts1.setOption(option1);
+        myecharts2.setOption(option2);
+
+    </script>
+</body>
+
+</html>

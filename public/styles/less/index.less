@@ -1,0 +1,161 @@
+// 引入其他文件的less 当前文件是主less文件
+@import './indexLogin.less';
+@import './login.less';
+@import './login_list.less';
+@import './register.less';
+@import './userInfo.less';
+@import './accountflow_list.less';
+@import './bid_request_list.less';
+@import './money_withdraw_list.less';
+@import './recharge_list.less';
+@import './borrow_list.less';
+@import './borrowBidReturn_list.less';
+@import './borrow.less';
+@import './borrow_apply.less';
+@import './borrow_info.less';
+@import './invest.less';
+@import './personal.less';
+@import './realAuth.less';
+@import './recharge.less';
+@import './moneyWithdraw_apply.less';
+
+// 定义变量保存颜色
+@baseColor:#2e8ece;
+
+/*头部导航*/
+.index-header-nav{
+    border-radius: 0;
+    margin-bottom: 0;
+    //左侧导航
+    .navbar-header{
+        a{
+            color: #fff;
+            i{
+                font-size: 26px;
+            }
+        }
+    }
+    //右侧导航
+    .navbar-right{
+        li{
+            a{
+                color: #fff;
+                &:hover{
+                    color: @baseColor;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/*内容导航*/
+.index-content-nav{
+    margin-bottom: 10px;
+    //中间内容
+    .navbar-nav{
+        li{
+            min-width: 90px;
+            text-align: center;
+            font-size: 16px;
+            &:hover{
+                background: #f1f1f1;
+                a{
+                    color: @baseColor;
+                }
+            }
+            a{
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+/*主体内容*/
+.index-main{
+    // 分类
+    .category{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        dl{
+            margin: 0;
+            padding-left: 80px;
+            height: 66px;
+            dt{
+                font-size: 20px;
+            }
+            dd{
+                font-size: 12px;
+                color: #999;
+            }
+        }
+        .item01{
+            background: url('../../dist/images/feature01.png') no-repeat;
+        }
+        .item02{
+            background: url('../../dist/images/feature02.png') no-repeat;
+        }
+        .item03{
+            background: url('../../dist/images/feature03.png') no-repeat;
+        }
+    }
+    //进行中借款
+    .borrow,.consult{
+        .panel{
+            border: 0;
+            .panel-heading{
+                padding: 0;
+                margin-top: 20px;
+                border-bottom: 1px solid #ccc;
+                .pull-left{
+                    font-size: 24px;
+                    border-bottom:4px solid @baseColor;
+                    color: @baseColor;
+                }
+            }
+            .panel-body{
+                font-size: 16px;
+                padding: 0;
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    li{
+                        margin-top: 20px;
+                        border-bottom: 1px dashed #ccc;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    //用户的地图
+    .index-map-username{
+        .panel{
+            border: 0;
+            .panel-heading{
+                padding: 0;
+                margin-top: 20px;
+                border-bottom: 1px solid #ccc;
+                .pull-left{
+                    font-size: 24px;
+                    border-bottom:4px solid @baseColor;
+                    color: @baseColor;
+                }
+            }
+        }
+    }
+}
+
+/* 页脚 */
+.index-footer{
+    background: #f1f1f1;
+    .row{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .col-sm-2{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

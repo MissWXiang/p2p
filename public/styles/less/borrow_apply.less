@@ -1,0 +1,85 @@
+/*主体内容*/
+.borrow_apply-main{
+    margin-bottom: 40px;
+    //左侧
+    .col-sm-3{
+        .panel-heading{
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            h4{
+                color: @baseColor;
+                font-size: 14px;
+                &:hover{
+                    color: #333;
+                }
+            }
+        }
+        .active{
+            background: #337ab7;
+            h4{
+                color: #fff;
+                &:hover{
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+        }
+        #collapseThree{
+            .panel-body{
+                a{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+    //右侧
+    .col-sm-9{
+        .panel-success{
+            background: #F4F8FA;
+            border: 0;
+            .content{
+                padding: 20px;
+                border-left: 2px solid #0099DD;
+                h3{
+                    color: @baseColor;
+                }
+                p{
+                    i{
+                        margin-left: 80px;
+                        font-style: normal;
+                    }
+                }
+            }
+        }
+        .panel{
+            .panel-heading{
+                border-bottom: 1px solid #ccc;
+                font-size: 20px;
+            }
+            .panel-body{
+                .borrow-left{
+                    padding-left: 0;
+                }
+                //相关费用
+                .borrow-related-fees{
+                    width: 300px;
+                    border-radius: 6px;
+                    border: 1px solid #ddd;
+                    box-shadow: 1px 1px 20px #ddd;
+                    padding: 20px 30px;
+                    position: absolute;
+                    top: 240px;
+                    right: 100px;
+                }
+                .panel-group-addon{
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 4px;
+                    position: absolute;
+                    right: 15px;
+                    top: 0px;
+                }
+            }
+        }
+    }
+}

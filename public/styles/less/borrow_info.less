@@ -1,0 +1,91 @@
+/*主体内容*/
+.borrow_info-main{
+    //借款人
+    //左侧
+    .col-sm-3{
+        .panel-body{
+            p{
+                margin: 0;
+
+                img{
+                    width: 100px;
+                    margin-left: 60px;
+                }
+                span{
+                    display: block;
+                    text-align: center;
+                    color: #0099DD;
+                }
+                i{
+                    width: 26px;
+                    height: 22px;
+                    line-height: 22px;
+                    text-align: center;
+                    background: #5CB85C;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+            }
+            .title{
+                margin-bottom: 40px;
+            }
+        }
+    }
+    //中间
+    .col-sm-6{
+        h2{
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+            color: @baseColor;
+            label{
+                padding: 4px 6px 4px;
+                font-size: 12px;
+            }
+        }
+        p{
+            margin-top: 10px;
+            font-size: 16px;
+            color: #999;
+            line-height: 1.8;
+            span{
+                color: @baseColor;
+                margin-left: 20px;
+            }
+        }
+    }
+    //右边
+    .content-right{
+        font-size: 16px;
+        color: #999;
+        p{
+            margin: 0 0 6px;
+            span{
+                color: @baseColor;
+                margin-left: 20px; 
+            }
+        }
+    }
+    // 借款人信息 和 审核认证信息
+    .borrow-info,.borrow-audit-info{
+        font-size: 16px;
+        color: #999;
+        span{
+            color: @baseColor;
+            margin-left: 10px;
+        }
+    }
+    //材料信息
+    .borrow-mater-info{
+        font-size: 16px;
+        font-weight: bold;
+        .panel-heading{
+            font-weight: normal;
+        }
+    }
+    //还款情况 和 投标记录
+    .borrow-payment-cond,.borrow-tender-record{
+        font-size: 16px;
+    }
+    
+}

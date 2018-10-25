@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p2p 实名认证</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 引入bootstrapvalidator.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./dist/css/index.min.css">
+
+    <!-- 设置cookie 每个页面都需要-->
+    <script src="/exit.html"></script>
+</head>
+
+<body>
+    <!-- 模态框 -->
+    <!-- 添加的模态框 -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+                </div>
+                <div class="modal-body add-body">
+                    <!-- 这里应该是放表单的 -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="save-add">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改的模态框 -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">修改用户</h4>
+                </div>
+                <div class="modal-body edit-body">
+                    <!-- 这里应该是放表单的 -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="save-edit">修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <nav class="login-header-nav navbar navbar-inverse">
+        <div class="container">
+            <!-- 左侧导航 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!--右侧导航 -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./index-login.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="" id="idusername"></a>
+                    </li>
+                    <li>
+                        <a href="./personal.html">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="./realname.html">实名认证</a>
+                    </li>
+                    <li>
+                        <a href="/cancel.html">注销</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容导航 -->
+    <nav class="login-content-nav navbar navbar-default hidden-xs">
+        <div class="container">
+            <!-- 左侧内容 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="./dist/images/logo.png" alt="Brand">
+                </a>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>实名认证</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容 -->
+    <main class="login-main container">
+        <!-- 登录表单 -->
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h4 class="pull-left">实名认证</h4>
+                <div class="pull-left" style="margin-left:20px;margin-top:4px;">
+                    <form class="form-inline" id="search-form">
+                        <div class="form-group">
+                            <label for="search-name">姓名</label>
+                            <input type="text" class="form-control" id="search-name" name="searchname" />
+                        </div>
+                        <div class="form-group">
+                            <label for="search-sex">性别</label>
+                            <select class="form-control" name="searchsex" id="search-sex">
+                                <option value="全部">全部</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-idtype">证件类型</label>
+                            <select class="form-control" name="searchidtype" id="search-idtype">
+                                <option value="全部">全部</option>
+                                <option value="身份证">身份证</option>
+                                <option value="军官证">军官证</option>
+                                <option value="驾驶证">驾驶证</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-success" id="search-btn">
+                            <span class="glyphicon glyphicon-search">搜索</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#addModal" data-cmd="add">添加</button>
+                    <button class="btn btn-danger" id="delAll">批量删除</button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>请选择</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>证件类型</th>
+                            <th>证件号码</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userList">
+                        <!-- 数据渲染 -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan='6'>
+                                <ul class="pagination" id="pagination"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="index-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</P>
+                    <P>版权所有： 2006-2015成都源代码教育咨询有限公司</P>
+                    <P>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</P>
+                    <P>电  话： 028-86261949 / 400-808-6840  邮箱： yuandaima@itsource.cn</P>
+                    <P>蜀ICP备14030149号-1  蜀公网安备510114990541</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微博:</p>
+                    <img src="./dist/images/tecent.png" alt="">
+                    <img src="./dist/images/sina.png" alt="">
+                </div>
+                <div class="col-sm-2">
+                    <p>官方微信:</p>
+                    <img src="./dist/images/wx.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入jquery -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入 bootstrap.min.js-->
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- bootstrapvalidator.min.js -->
+    <script src="./lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/template.js"></script>
+    <!-- 引入插件分页.js -->
+    <script src="./lib/pagination/jquery.twbsPagination.js"></script>
+    <!-- 定义模板 -->
+    <script type="text/html" id="userTmpl">
+        {{each userall as v i}}
+            <tr>
+                <td><input type="checkbox" value="{{v._id}}" class='del-btn' /></td>
+                <td>{{v.name}}</td>
+                <td>{{v.sex}}</td>
+                <td>{{v.idtype}}</td>
+                <td>{{v.idcode}}</td>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-cmd="edit" id='edit' data-id='{{v._id}}'>修改</button>
+                    <button class="btn btn-danger">
+                        <a href='javascript:delone("{{v._id}}")' style='color:#fff;text-decoration:none;'>删除</a>
+                    </button>
+                </td>
+            </tr>
+        {{/each}}
+    </script>
+    <!-- 自定义js代码 -->
+    <script>
+        //显示当前登录用户名
+        $(function () {
+            $("#idusername").html(document.cookie.split('=')[1]);
+        });
+
+        //页面加载时获取所有数据
+        $(function () {
+            infoall();
+        })
+
+        //高级查询
+        $("#search-btn").on('click', function () {
+            //获取所有的值
+            let parmas = $("#search-form").serialize();
+            //发起ajax请求
+            $.post('/search.html', parmas, function (data) {
+                //console.log(data);
+                 //接收所有数据
+                 let searchall = data;
+                //将模板和数据合并
+                let rst = template('userTmpl', {"userall": searchall});
+                // console.log(rst);
+                //添加到页面中
+                $('#userList').html(rst)
+            })
+        })
+
+        //定义获取所有数据函数
+        function infoall() {
+            // 发送ajax请求 获取所有用户数据
+            $.get('/userall.html', (data) => {
+                //接收所有数据
+                let userall = data;
+                //计算数据总条数 
+                var totalCount = userall.length
+                //定义每页显示多少条 
+                var pagesize = 3;
+                //计算出一共有多少页 
+                var totalPage = Math.ceil(totalCount / pagesize);
+                //console.log(totalPage)
+                //分页显示
+                $('#pagination').twbsPagination({
+                    totalPages: totalPage,
+                    visiblePages: 5,
+                    first: '首页',
+                    prev: '上一页',
+                    next: '下一页',
+                    last: '尾页',
+                    onPageClick: function (event, page) {
+                        //计算开始下标 和 结束下标
+                        var start = (page - 1) * pagesize;
+                        var end = Math.min(start + pagesize, totalCount);
+                        //截取数据
+                        var rstall = userall.slice(start, end);
+                        //将模板和数据合并
+                        let rst = template('userTmpl', { "userall": rstall });
+                        // console.log(rst);
+                        //添加到页面中
+                        $('#userList').html(rst)
+                    }
+                })
+            });
+        }
+
+        //点击按钮  显示添加按钮的模态框里面的表格 
+        $('#addModal').on('shown.bs.modal', function (e) {
+            // 如果点击的是添加 直接加载表单
+            $('.add-body').load('./form.html');
+        });
+
+        //点击修改按钮  显示修改按钮的模态框里面的表格 并实现数据回显
+        $('#editModal').on('shown.bs.modal', function (e) {
+            //获取的属性值
+            let id = $(e.relatedTarget).data('id');
+            // console.log(id);
+            // 如果点击的是修改 直接加载表单 并且 数据回显
+            $('.edit-body').load('./formedit.html', () => {
+                // 发起请求  让数据回显
+                $.get('/edixone.html?id=' + id, (data) => {
+                    //获取表达的值
+                    $('input[name = name]').val(data.result.name);
+                    $('input[name = idtype]').val(data.result.idtype);
+                    $('input[name = idcode]').val(data.result.idcode);
+                    $('input[name = id]').val(data.result._id);
+
+                    $('input[name = sex]').each(function (i, v) {
+                        if (v.value === data.result.sex) {
+                            $(v).prop('checked', true);
+                        }
+                    })
+                })
+            });
+        });
+
+        //点击添加按钮  发起请求
+        $('#save-add').on('click', () => {
+            //获取表单的值
+            let parmas = $("#addform").serialize();
+            let name = $('input[ name="name"]')[0].value;
+            let idcode = $('input[name="idcode"]')[0].value;
+            //判断
+            if (!name) {
+                alert("请输入姓名");
+            } else if (!idcode) {
+                alert("请输入的证件号码");
+            } else {
+                //发起请求
+                $.post('/adduserall', parmas, (data) => {
+                    if (data == '1') {
+                        alert('添加成功！');
+                        $('#addModal').modal('hide')  // 隐藏模态框
+                        infoall();
+                        location.href = './realname.html';
+                    } else {
+                        alert('添加失败！');
+                    }
+                })
+            }
+        });
+
+        //点击批量删除
+        $('#delAll').on('click', () => {
+            //获取id
+            let ids = $('.del-btn');
+            //定义表里保存id值
+            let idAll = [];
+            //循环数据
+            for (var i = 0; i < ids.length; i++) {
+                //判断是否选中状态
+                if (ids[i].checked) {
+                    idAll.push(ids[i].value);
+                }
+            }
+            if (!idAll.length) {
+                alert('请选择数据以后再执行删除操作');
+                return;
+            }
+
+            //发起ajax
+            $.post('/delAll.html', { 'idAll': idAll }, function (data) {
+                if (data == '1') {
+                    alert('删除成功！');
+                    infoall();
+                    location.href = './realname.html';
+                } else {
+                    alert('删除失败！');
+                }
+            })
+
+        });
+
+        //单条删除
+        function delone(id) {
+            //发起ajax请求
+            $.get('/delone.html?id=' + id, function (data) {
+                if (data.errcode == '1') {
+                    alert('删除成功！');
+                    infoall();
+                    location.href = './realname.html';
+                } else {
+                    alert("删除失败！");
+                }
+            })
+
+        };
+
+        //修改数据
+        $('#save-edit').on('click', function () {
+            //获取表单的值
+            let parmas = $("#editform").serialize();
+            // console.log(parmas);
+            // 发起ajax请求
+            $.post('/save-edit.html', parmas, function (data) {
+                if (data == '1') {
+                    alert('修改成功！');
+                    $('#editModal').modal('hide')  // 隐藏模态框
+                    infoall();
+                    location.href = './realname.html';
+                } else {
+                    alert('修改失败！');
+                }
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>
